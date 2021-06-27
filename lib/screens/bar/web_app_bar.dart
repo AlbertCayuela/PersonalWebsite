@@ -30,12 +30,12 @@ class WebAppBar extends StatelessWidget {
             ),
           ),
           WebAppBarElement(
-            title: 'Projects',
+            title: 'CV',
             onPress: () {},
           ),
           SizedBox(width: 20),
           WebAppBarElement(
-            title: 'CV',
+            title: 'Projects',
             onPress: () {},
           ),
           SizedBox(width: 20),
