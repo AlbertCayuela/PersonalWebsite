@@ -1,14 +1,21 @@
+import 'package:albert_cayuela_web/screens/base_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Main());
+  runApp(MyApp());
 }
 
-class Main extends StatelessWidget {
-  const Main({Key? key}) : super(key: key);
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: Colors.black,
+        fontFamily: 'Raleway',
+      ),
+      home: BaseScreen(),
+    );
   }
 }
