@@ -45,12 +45,13 @@ class IntroScreen extends StatelessWidget {
                 width: 20,
               ),
               SocialMediaElement(
-                  asset: 'github.svg', url: 'https://github.com/AlbertCayuela'),
+                  asset: 'linkedin.svg',
+                  url: 'https://www.linkedin.com/in/albert-cayuela-naval/'),
               SizedBox(
                 width: 20,
               ),
               SocialMediaElement(
-                  asset: 'github.svg', url: 'https://github.com/AlbertCayuela'),
+                  asset: 'twitter.svg', url: 'https://twitter.com/CayuelaVG'),
             ],
           ),
         ],
