@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({Key? key}) : super(key: key);
@@ -38,22 +39,18 @@ class IntroScreen extends StatelessWidget {
             children: [
               SocialMediaElement(
                 asset: 'github.svg',
-                onPress: () {},
+                url: 'https://github.com/AlbertCayuela',
               ),
               SizedBox(
                 width: 20,
               ),
               SocialMediaElement(
-                asset: 'github.svg',
-                onPress: () {},
-              ),
+                  asset: 'github.svg', url: 'https://github.com/AlbertCayuela'),
               SizedBox(
                 width: 20,
               ),
               SocialMediaElement(
-                asset: 'github.svg',
-                onPress: () {},
-              ),
+                  asset: 'github.svg', url: 'https://github.com/AlbertCayuela'),
             ],
           ),
         ],
@@ -66,16 +63,25 @@ class SocialMediaElement extends StatelessWidget {
   const SocialMediaElement({
     Key? key,
     required this.asset,
-    required this.onPress,
+    required this.url,
   }) : super(key: key);
 
-  final String asset;
-  final Function onPress;
+  final String asset, url;
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {},
+      onPressed: () async {
+        if (await canLaunch(url)) {
+          await launch(
+            url,
+            forceSafariVC: true,
+            forceWebView: true,
+          );
+        } else {
+          print('could not launch $url');
+        }
+      },
       icon: SvgPicture.asset(
         asset,
         color: Colors.white,
