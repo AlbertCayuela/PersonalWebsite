@@ -17,7 +17,6 @@ class WebAppBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(25),
         color: Colors.white10,
       ),
-      margin: EdgeInsets.all(20),
       padding: EdgeInsets.all(20),
       child: Row(
         children: [
