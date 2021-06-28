@@ -31,6 +31,19 @@ class BaseScreen extends StatelessWidget {
             ),
             SizedBox(height: 20),
             IntroScreen(),
+            SizedBox(height: 20),
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.white10,
+                  borderRadius: BorderRadius.circular(25)),
+              child: Row(
+                children: [
+                  Column(
+                    children: [Text('Tecnologies')],
+                  )
+                ],
+              ),
+            )
           ]),
         ),
       ),

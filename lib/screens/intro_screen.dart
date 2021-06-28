@@ -11,7 +11,11 @@ class IntroScreen extends StatelessWidget {
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
-        color: Colors.white10,
+        image: DecorationImage(
+            image: AssetImage('background.png'),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+                Colors.black.withOpacity(0.5), BlendMode.dstATop)),
       ),
       child: Column(
         children: [
