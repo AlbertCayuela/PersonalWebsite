@@ -7,6 +7,7 @@ class TechnologyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = MediaQuery.of(context).size.width < 700;
     return Container(
         padding: EdgeInsets.all(50),
         decoration: BoxDecoration(
@@ -20,9 +21,8 @@ class TechnologyScreen extends StatelessWidget {
             Text('Skills', style: Theme.of(context).textTheme.headline1),
             SizedBox(height: 20),
             IntrinsicHeight(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Flex(
+                direction: isMobile ? Axis.vertical : Axis.horizontal,
                 children: [
                   SkillWidget(
                     title: 'Coding',
@@ -35,6 +35,7 @@ class TechnologyScreen extends StatelessWidget {
                       'CSS': 'Low'
                     },
                   ),
+                  Spacer(),
                   SkillWidget(
                     title: 'Software',
                     skills: {
@@ -45,6 +46,7 @@ class TechnologyScreen extends StatelessWidget {
                       'Sony Vegas': 'Medium',
                     },
                   ),
+                  Spacer(),
                   SkillWidget(
                     title: 'Languages',
                     skills: {
@@ -75,36 +77,40 @@ class SkillWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20),
-      decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.05),
-          borderRadius: BorderRadius.circular(10)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: Theme.of(context).textTheme.headline2,
-          ),
-          SizedBox(height: 10),
-          for (int i = 0; i < skills.values.toList().length; i++)
-            Container(
-              child: Column(
-                children: [
-                  Text(
-                    skills.entries.elementAt(i).key +
-                        ' - ' +
-                        skills.entries.elementAt(i).value,
-                    style: Theme.of(context).textTheme.bodyText1,
-                  ),
-                  SizedBox(
-                    height: 5,
-                  )
-                ],
-              ),
+    return Expanded(
+      flex: 2,
+      child: Container(
+        constraints: BoxConstraints.expand(),
+        padding: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.05),
+            borderRadius: BorderRadius.circular(10)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: Theme.of(context).textTheme.headline2,
             ),
-        ],
+            SizedBox(height: 10),
+            for (int i = 0; i < skills.values.toList().length; i++)
+              Container(
+                child: Column(
+                  children: [
+                    Text(
+                      skills.entries.elementAt(i).key +
+                          ' - ' +
+                          skills.entries.elementAt(i).value,
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
+                    SizedBox(
+                      height: 5,
+                    )
+                  ],
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }
