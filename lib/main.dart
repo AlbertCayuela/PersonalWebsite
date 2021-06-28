@@ -1,4 +1,4 @@
-import 'package:albert_cayuela_web/screens/base_screen.dart';
+import 'package:albert_cayuela_web/base_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
