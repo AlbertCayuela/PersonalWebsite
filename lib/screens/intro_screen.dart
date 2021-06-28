@@ -11,7 +11,7 @@ class IntroScreen extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(10),
         image: DecorationImage(
             image: AssetImage('background.png'),
             fit: BoxFit.cover,
@@ -20,17 +20,13 @@ class IntroScreen extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Text('Albert Cayuela',
-              style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.lightBlueAccent)),
+          Text('Albert Cayuela', style: Theme.of(context).textTheme.headline1),
           SizedBox(
             height: 20,
           ),
           Text(
             "Hi I'm Albert, I love coding and creating new projects",
-            style: TextStyle(fontSize: 20),
+            style: Theme.of(context).textTheme.subtitle1,
           ),
           SizedBox(
             height: 20,
@@ -67,7 +63,7 @@ class IntroScreen extends StatelessWidget {
             child: Text(
               'Hi my name is Albert Cayuela and I am a software developer. I studied Video Games Design and Development at Univeritat Politècnica de Catalunya (Spain).\nDuring my studies I really enjoyed coding and I always had the inner need of creating new projects, this is why I started learning Flutter.\nMy main priority is learning while enjoying and creating, and this is what I am trying to do every day, feel free to chek out my best projects below and contact me if you like them!',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 17),
+              style: Theme.of(context).textTheme.bodyText1,
             ),
           )
         ],

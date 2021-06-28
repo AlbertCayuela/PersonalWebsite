@@ -14,7 +14,7 @@ class WebAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(10),
         color: Colors.white10,
       ),
       padding: EdgeInsets.all(20),

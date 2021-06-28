@@ -14,6 +14,25 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         scaffoldBackgroundColor: Colors.black,
         fontFamily: 'Raleway',
+        textTheme: TextTheme(
+            //headline 1 MAIN TITLE
+            headline1: TextStyle(
+                color: Colors.lightBlueAccent,
+                fontSize: 40,
+                fontWeight: FontWeight.bold),
+            //subtitle 1 MAIN SUBTITLE
+            subtitle1: TextStyle(
+              fontSize: 20,
+            ),
+            //normal bodytext
+            bodyText1: TextStyle(
+              fontSize: 17,
+            ),
+            //CONTAINER HEADER
+            headline2: TextStyle(
+                color: Colors.lightBlueAccent,
+                fontSize: 25,
+                fontWeight: FontWeight.bold)),
       ),
       home: BaseScreen(),
     );
