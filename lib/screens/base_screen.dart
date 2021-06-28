@@ -2,8 +2,11 @@ import 'dart:ui';
 
 import 'package:albert_cayuela_web/screens/bar/web_app_bar.dart';
 import 'package:albert_cayuela_web/screens/intro_screen.dart';
+import 'package:albert_cayuela_web/screens/technology_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../globals.dart';
 
 class BaseScreen extends StatelessWidget {
   const BaseScreen({Key? key}) : super(key: key);
@@ -22,29 +25,24 @@ class BaseScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: SingleChildScrollView(
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-            Row(),
-            WebAppBar(
-              title: 'Albert Cayuela',
-              onTitlePress: () {},
+          child: Center(
+            child: Container(
+              width: maxWidth,
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Row(),
+                    WebAppBar(
+                      title: 'Albert Cayuela',
+                      onTitlePress: () {},
+                    ),
+                    SizedBox(height: 20),
+                    IntroScreen(),
+                    SizedBox(height: 20),
+                    TechnologyScreen()
+                  ]),
             ),
-            SizedBox(height: 20),
-            IntroScreen(),
-            SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.white10,
-                  borderRadius: BorderRadius.circular(25)),
-              child: Row(
-                children: [
-                  Column(
-                    children: [Text('Tecnologies')],
-                  )
-                ],
-              ),
-            )
-          ]),
+          ),
         ),
       ),
     );
