@@ -24,37 +24,38 @@ class BaseScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: SingleChildScrollView(
-          child: Center(
-            child: Container(
-              width: maxWidth,
+        child: Center(
+          child: Container(
+            width: maxWidth,
+            child: SingleChildScrollView(
               child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Row(),
-                    WebAppBar(
-                      title: 'Albert Cayuela',
-                      onTitlePress: () {},
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(),
+                  WebAppBar(
+                    title: 'Albert Cayuela',
+                    onTitlePress: () {},
+                  ),
+                  SizedBox(height: 20),
+                  IntroScreen(),
+                  SizedBox(height: 20),
+                  TechnologyScreen(),
+                  SizedBox(height: 20),
+                  Container(
+                    padding: EdgeInsets.all(50),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white.withOpacity(0.05),
                     ),
-                    SizedBox(height: 20),
-                    IntroScreen(),
-                    SizedBox(height: 20),
-                    TechnologyScreen(),
-                    SizedBox(height: 20),
-                    Container(
-                      padding: EdgeInsets.all(50),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.white.withOpacity(0.05),
-                      ),
-                      child: Row(
-                        children: [
-                          Text('My best projects',
-                              style: Theme.of(context).textTheme.headline1),
-                        ],
-                      ),
+                    child: Row(
+                      children: [
+                        Text('My best projects',
+                            style: Theme.of(context).textTheme.headline1),
+                      ],
                     ),
-                  ]),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
