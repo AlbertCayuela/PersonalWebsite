@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TechnologyScreen extends StatelessWidget {
-  const TechnologyScreen({
+class SkillsScreen extends StatelessWidget {
+  const SkillsScreen({
     Key? key,
   }) : super(key: key);
 

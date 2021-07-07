@@ -3,7 +3,8 @@ import 'dart:ui';
 import 'package:albert_cayuela_web/screens/bar/web_app_bar.dart';
 import 'package:albert_cayuela_web/screens/intro_screen.dart';
 import 'package:albert_cayuela_web/screens/project_screen.dart';
-import 'package:albert_cayuela_web/screens/technology_screen.dart';
+import 'package:albert_cayuela_web/screens/skills_screen.dart';
+import 'package:albert_cayuela_web/screens/work_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -40,7 +41,16 @@ class BaseScreen extends StatelessWidget {
                   SizedBox(height: 20),
                   IntroScreen(),
                   SizedBox(height: 20),
-                  TechnologyScreen(),
+                  SkillsScreen(),
+                  SizedBox(height: 20),
+                  WorkScreen(
+                    workExperiences: [
+                      '- Website developer internship at Trenes.com (February 2021 - July 2021)',
+                      '- Logistics operator at Decathlon (March 2019 - August 2019)',
+                      '- Robotics teacher at Kubic Academy (2016 - 2017)',
+                    ],
+                  ),
+                  SizedBox(height: 20),
                   SizedBox(height: 20),
                   ProjectScreen(),
                 ],
