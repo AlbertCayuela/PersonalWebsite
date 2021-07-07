@@ -25,35 +25,54 @@ class SkillsScreen extends StatelessWidget {
                 direction: isMobile ? Axis.vertical : Axis.horizontal,
                 children: [
                   SkillWidget(
-                    title: 'Coding',
+                    title: 'Technical Skills',
                     skills: {
-                      'C++': 'High',
-                      'C': 'High',
-                      'C#': 'High',
-                      'Dart/Flutter': 'High',
-                      'HTML': 'Medium',
-                      'CSS': 'Low'
+                      '- C++': 'High',
+                      '- C': 'High',
+                      '- C#': 'High',
+                      '- Dart/Flutter': 'High',
+                      '- Firebase': 'Advanced',
+                      '- HTML': 'Intermediate',
+                      '- 3D modelling': 'Intermediate',
+                      '- 3D animation': 'Intermediate',
+                      '- CSS': 'Beginner',
+                      '- PHP': 'Beginner',
+                      '- SQL': 'Beginner',
                     },
                   ),
-                  Spacer(),
                   SkillWidget(
                     title: 'Software',
                     skills: {
-                      'Visual Studio': 'High',
-                      'VS Code': 'High',
-                      'Unity': 'High',
-                      'Photoshop': 'Medium/High',
-                      'Sony Vegas': 'Medium',
+                      '- Visual Studio': 'Advanced',
+                      '- VS Code': 'Advanced',
+                      '- Unity': 'Advanced',
+                      '- GitHub': 'Advanced',
+                      '- Google Drive Services': 'Advanced',
+                      '- Office': 'Advanced',
+                      '- WordPress': 'Advanced',
+                      '- Photoshop': 'Intermediate/Advanced',
+                      '- Sony Vegas': 'Intermediate',
+                      '- 3ds Max': 'Intermediate',
+                      '- Adobe Premiere': 'Beginner',
                     },
                   ),
-                  Spacer(),
+                  SoftSkillsWidget(
+                    softSkills: [
+                      '- Curious',
+                      '- Responsible',
+                      '- Team worker',
+                      '- Willing to learn',
+                      '- Detail oriented',
+                      '- Patient'
+                    ],
+                  ),
                   SkillWidget(
                     title: 'Languages',
                     skills: {
-                      'Spanish': 'Native',
-                      'Catalan': 'Native',
-                      'English': 'Advanced',
-                      'French': 'Basic',
+                      '- Spanish': 'Native',
+                      '- Catalan': 'Native',
+                      '- English': 'Professional (B2 Certified)',
+                      '- French': 'Elementary',
                     },
                   ),
                 ],
@@ -61,6 +80,51 @@ class SkillsScreen extends StatelessWidget {
             )
           ],
         ));
+  }
+}
+
+class SoftSkillsWidget extends StatelessWidget {
+  SoftSkillsWidget({
+    Key? key,
+    required this.softSkills,
+  }) : super(key: key);
+
+  List softSkills = [];
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        constraints: BoxConstraints.expand(),
+        padding: EdgeInsets.all(20),
+        margin: EdgeInsets.only(right: 15, top: 15),
+        decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.05),
+            borderRadius: BorderRadius.circular(10)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Soft skills',
+              style: Theme.of(context).textTheme.headline2,
+            ),
+            SizedBox(height: 10),
+            for (int i = 0; i < softSkills.length; i++)
+              Container(
+                child: Column(
+                  children: [
+                    Text(
+                      softSkills[i],
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
+                    SizedBox(height: 5),
+                  ],
+                ),
+              )
+          ],
+        ),
+      ),
+    );
   }
 }
 
@@ -78,10 +142,10 @@ class SkillWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: 2,
       child: Container(
         constraints: BoxConstraints.expand(),
         padding: EdgeInsets.all(20),
+        margin: EdgeInsets.only(right: 15, top: 15),
         decoration: BoxDecoration(
             color: Colors.white.withOpacity(0.05),
             borderRadius: BorderRadius.circular(10)),
