@@ -26,6 +26,42 @@ class ProjectScreen extends StatelessWidget {
                 "For my final university project, I decided to learn Flutter from scratch and build a mobile application that helps video games industry professionals find a job within the industry.",
             url: 'https://github.com/AlbertCayuela/GamesValleyRepository',
           ),
+          SizedBox(
+            height: 20,
+          ),
+          ProjectWidget(
+            title: '3D Game Project',
+            description:
+                "3D game made with our own game engine based on The Witcher Netflix series. I worked on this project for 5 months with 37 students.",
+            url: 'https://github.com/OverPowered-Team/TheWitcher',
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          ProjectWidget(
+            title: '3D Game Engine',
+            description:
+                "3D Game engine written in C++ using OpenGL and other libraries.",
+            url: 'https://github.com/AlbertCayuela/NistalEngine',
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          ProjectWidget(
+            title: '2D Game Project',
+            description:
+                "2D game based on Command and Conquer: Red Alert 2 made by 7 people during 5 months, written in C++.",
+            url: 'https://github.com/hot-dog-games/Blue-Alert',
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          ProjectWidget(
+            title: 'Artificial Intelligence Project',
+            description:
+                "Game made with Unity in which two agents have different behaviors that are controlled by behavior trees (using Behavior Bricks assets). Written in C#.",
+            url: 'https://github.com/AlbertCayuela/IA-Tanks',
+          ),
         ],
       ),
     );
@@ -53,6 +89,7 @@ class ProjectWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Row(),
           Text(
             this.title,
             style: Theme.of(context).textTheme.headline2,
