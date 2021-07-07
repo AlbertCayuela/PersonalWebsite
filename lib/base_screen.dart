@@ -44,6 +44,7 @@ class BaseScreen extends StatelessWidget {
                   SkillsScreen(),
                   SizedBox(height: 20),
                   WorkScreen(
+                    title: 'Work experience',
                     workExperiences: [
                       '- Website developer internship at Trenes.com (February 2021 - July 2021)',
                       '- Logistics operator at Decathlon (March 2019 - August 2019)',
@@ -51,6 +52,13 @@ class BaseScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 20),
+                  WorkScreen(
+                    title: 'Studies',
+                    workExperiences: [
+                      '- Video Games Design and Development degree at Univeristat Politècnica de Catalunya (2016 - 2021)',
+                      '- HighSchool at IES Castellbisbal (2014 - 2016)'
+                    ],
+                  ),
                   SizedBox(height: 20),
                   ProjectScreen(),
                 ],

@@ -3,9 +3,11 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 
 class WorkScreen extends StatelessWidget {
-  WorkScreen({Key? key, required this.workExperiences}) : super(key: key);
+  WorkScreen({Key? key, required this.workExperiences, required this.title})
+      : super(key: key);
 
   List workExperiences = [];
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class WorkScreen extends StatelessWidget {
         children: [
           Row(),
           Text(
-            'Work experience',
+            this.title,
             style: Theme.of(context).textTheme.headline1,
           ),
           SizedBox(height: 10),
