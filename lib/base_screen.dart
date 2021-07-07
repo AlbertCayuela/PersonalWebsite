@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:albert_cayuela_web/screens/bar/web_app_bar.dart';
 import 'package:albert_cayuela_web/screens/intro_screen.dart';
+import 'package:albert_cayuela_web/screens/project_screen.dart';
 import 'package:albert_cayuela_web/screens/technology_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -41,19 +42,7 @@ class BaseScreen extends StatelessWidget {
                   SizedBox(height: 20),
                   TechnologyScreen(),
                   SizedBox(height: 20),
-                  Container(
-                    padding: EdgeInsets.all(50),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white.withOpacity(0.05),
-                    ),
-                    child: Row(
-                      children: [
-                        Text('My best projects',
-                            style: Theme.of(context).textTheme.headline1),
-                      ],
-                    ),
-                  ),
+                  ProjectScreen(),
                 ],
               ),
             ),
