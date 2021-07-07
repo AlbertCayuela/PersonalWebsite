@@ -11,13 +11,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'globals.dart';
 
 class BaseScreen extends StatelessWidget {
-  const BaseScreen({Key? key}) : super(key: key);
+  BaseScreen({Key? key}) : super(key: key);
+
+  ScrollController? _scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          _scrollController?.jumpTo(0);
+        },
         child: Icon(
           Icons.arrow_upward_rounded,
           color: Colors.white,
@@ -30,6 +34,7 @@ class BaseScreen extends StatelessWidget {
           child: Container(
             width: maxWidth,
             child: SingleChildScrollView(
+              controller: _scrollController,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
