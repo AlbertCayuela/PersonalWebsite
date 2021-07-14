@@ -8,6 +8,7 @@ class IntroScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = MediaQuery.of(context).size.width < 700;
     return Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
@@ -59,7 +60,8 @@ class IntroScreen extends StatelessWidget {
             ],
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 20, horizontal: 70),
+            margin: EdgeInsets.symmetric(
+                vertical: 20, horizontal: isMobile ? 0 : 70),
             child: Text(
               'Hi my name is Albert Cayuela and I am a software developer. I studied Video Games Design and Development at Univeritat Politècnica de Catalunya (Spain).\nDuring my studies I really enjoyed coding and I always had the inner need of creating new projects, this is why I started learning Flutter.\nMy main priority is learning while enjoying and creating, and this is what I am trying to do every day, feel free to chek out my best projects below and contact me if you like them!',
               textAlign: TextAlign.center,
