@@ -12,6 +12,7 @@ class WebAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = MediaQuery.of(context).size.width < 700;
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),

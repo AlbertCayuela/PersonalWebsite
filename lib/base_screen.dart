@@ -17,7 +17,49 @@ class BaseScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = MediaQuery.of(context).size.width < 700;
     return Scaffold(
+      appBar: AppBar(),
+      drawer: isMobile
+          ? Drawer(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10, left: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ListTile(
+                      leading: Text(
+                        'Skills',
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                      onTap: () {},
+                    ),
+                    ListTile(
+                      leading: Text(
+                        'Work Experience',
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                      onTap: () {},
+                    ),
+                    ListTile(
+                      leading: Text(
+                        'Studies',
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                      onTap: () {},
+                    ),
+                    ListTile(
+                      leading: Text(
+                        'Best projects',
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+              ),
+            )
+          : null,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           _scrollController?.jumpTo(0);
@@ -39,10 +81,11 @@ class BaseScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Row(),
-                  WebAppBar(
-                    title: 'Albert Cayuela',
-                    onTitlePress: () {},
-                  ),
+                  if (!isMobile)
+                    WebAppBar(
+                      title: 'Albert Cayuela',
+                      onTitlePress: () {},
+                    ),
                   SizedBox(height: 20),
                   IntroScreen(),
                   SizedBox(height: 20),
