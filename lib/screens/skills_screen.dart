@@ -9,7 +9,7 @@ class SkillsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isMobile = MediaQuery.of(context).size.width < 700;
     return Container(
-        padding: EdgeInsets.all(50),
+        padding: EdgeInsets.all(isMobile ? 0 : 50),
         decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.05),
           borderRadius: BorderRadius.circular(10),
